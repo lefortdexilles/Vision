@@ -119,6 +119,7 @@ if index_cols and columns_col and values_col:
             )
 
             # === Conversion en HTML (multi-index préservé) ===
+            pivot = pivot.fillna(0)
             html_table = pivot.to_html(classes="dark-table", border=0)
 
             # === CSS Sombre scrollable ===
