@@ -31,6 +31,7 @@ st.subheader("⚙️ Paramètres du tableau croisé")
 
 # --- 1️⃣ Lire le fichier Excel via Polars ---
 df = pl.read_excel("dataf.xlsx")
+df = df.fill_nan(0)
 
 # --- Convertir en Pandas uniquement pour les widgets ---
 df_pd = df.to_pandas()
@@ -173,5 +174,6 @@ if index_cols and columns_col and values_col:
 
 else:
     st.info("👉 Sélectionne au moins une colonne d’index, une colonne de pivot et une valeur à agréger.")
+
 
 
