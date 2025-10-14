@@ -32,6 +32,7 @@ st.subheader("⚙️ Paramètres du tableau croisé")
 # --- 1️⃣ Lire le fichier Excel via Polars ---
 df = pl.read_excel("dataf.xlsx")
 df = df.fill_nan(0)
+df = df.fill_null(0)
 
 # --- Convertir en Pandas uniquement pour les widgets ---
 df_pd = df.to_pandas()
